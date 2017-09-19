@@ -453,12 +453,13 @@ var resizePizzas = function(size) {
     // Sets randomPizzaContainer before the for loop to save repeated processing
     var pc = document.getElementsByClassName("randomPizzaContainer");
     var newwidth = [];
-    for (var j = 0; j < len; j++) {
+    var j = 0;
+    for (j = 0; j < len; j++) {
       var dx = determineDx(pc[j], size);
       newwidth[j] = (pc[j].offsetWidth + dx) + 'px';
     }
     // Created a new for loop to set the styles of the containers prevent the browser from having to rerender and paint so much.
-    for (var j = 0; j< len; j++) {
+    for (j = 0; j< len; j++) {
      pc[j].style.width = newwidth[j];
     }
   }
